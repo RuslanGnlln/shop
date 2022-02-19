@@ -63,7 +63,7 @@
     <td>
       <form th:action="@{/admin/changeOrderStatus/{id} (id=${order.getId()})}" th:object="${status}" th:method="post">
         <select th:field="*{orderStatus}">
-          <option th:each="info : ${T(com.zorkoalex.shop.database.OrderStatus).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'PERFORMED'}"></option>
+          <option th:each="info : ${T(com.gainullinruslan.shop.database.OrderStatus).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'PERFORMED'}"></option>
         </select>
         <button type="submit">update</button>
       </form>
@@ -110,7 +110,7 @@
         <td>
         <form th:action="@{/admin/changePaymentStatus/{id} (id=${order.getPayment().getId()})}" th:object="${payment}" th:method="post">
           <select th:field="*{status}">
-            <option th:each="info : ${T(com.zorkoalex.shop.database.PaymentStatus).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'PAID'}"></option>
+            <option th:each="info : ${T(com.gainullinruslan.shop.database.PaymentStatus).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'PAID'}"></option>
           </select>
           <button type="submit">update</button>
         </form>
@@ -187,7 +187,7 @@
               <tr>
                 <td>
                   <select th:field="*{payment.status}">
-                    <option th:each="info : ${T(com.zorkoalex.shop.database.PaymentStatus).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'SCHEDULED'}"></option>
+                    <option th:each="info : ${T(com.gainullinruslan.shop.database.PaymentStatus).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'SCHEDULED'}"></option>
                   </select>
                 </td>
               </tr>
@@ -207,7 +207,7 @@
               <tr>
                 <td>
                   <select th:field="*{delivery}">
-                    <option th:each="info : ${T(com.zorkoalex.shop.database.Delivery).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'NEED'}"></option>
+                    <option th:each="info : ${T(com.gainullinruslan.shop.database.Delivery).values()}" th:value="${info}" th:text="${info}" th:selected="${info == 'NEED'}"></option>
                   </select>
                 </td>
                 <td><input type="text" th:field="*{deliveryAddress}"></td>
